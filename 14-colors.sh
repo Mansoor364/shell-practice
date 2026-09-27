@@ -23,6 +23,7 @@ VALIDATE(){
         exit 1
     else
         echo "$2 is $G SUCCESS $N"
+    fi
 }
 
 dnf list installed git
@@ -43,3 +44,4 @@ then
     VALIDATE $? "Mysql Installation"
 else
     echo "$Y mysql is already installed, nothing to do.. $N"
+fi
