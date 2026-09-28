@@ -1,16 +1,14 @@
 #!/bin/bash
+LOGS_FOLDER="/var/log/shell-script"
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIME_STAMP.log"
+mkdir -p $LOGS_FOLDER
 
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-
-LOGS_FOLDER="/var/log/shell-script"
-SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIME_STAMP.log"
-
-mkdir -p $LOGS_FOLDER
 
 USERID=$(id -u)   #id -u will give userid
 ROOT_USER(){
@@ -20,6 +18,7 @@ ROOT_USER(){
         exit 1
     fi
 }
+
 ROOT_USER
 if [ $# -eq 0 ]
 then
@@ -27,7 +26,7 @@ then
 fi
 
 USAGE(){
-    echo -e "$R USAGE:: sudo sh 16-redirector.sh package1 package2 $N "  
+    echo -e "$R USAGE:: sudo sh 16-redirector.sh package1 package2 $N"  
     exit 1
 }
 
