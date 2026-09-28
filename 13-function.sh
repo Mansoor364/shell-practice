@@ -1,11 +1,4 @@
 #!/bin/bash
-
-R="\e[31m"
-G="\e[32m"
-Y="\e[33m"
-N="\e[0m"
-
-
 USERID=$(id -u)                 #id -u command will give user id of user
 if [ $USERID -ne 0 ]            #if user is not root user
 then
@@ -20,6 +13,7 @@ VALIDATE(){
         exit 1
     else
         echo "$2 is SUCCESS"    #git/mysql installation
+    fi
 }
 
 dnf list installed git         
