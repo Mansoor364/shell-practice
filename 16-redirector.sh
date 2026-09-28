@@ -25,7 +25,7 @@ USAGE(){
     exit 1
 }
 
-echo "script started executing at .. $(date)"
+echo "script started executing at .. $(date)"  &>>$LOG_FILE
 
 if [ $# -eq 0 ]
 then
