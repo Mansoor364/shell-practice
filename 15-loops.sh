@@ -31,13 +31,7 @@ do
     then
         echo -e "$Y$package is installing.... $N"
         dnf install $package -y
-        if [ $? -ne 0 ]
-        then
-            echo -e "$R$package installation is failed $N"
-            exit 1
-        else
-            echo -e "$G$package installation is success $N"
-        fi
+        VALIDATE $? "Installing $package"
     else
         echo -e "$G$package is already installated..$N $Y nothing to do $N"
     fi
