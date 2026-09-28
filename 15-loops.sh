@@ -39,7 +39,7 @@ do
             echo -e "$G$package installation is success $N"
         fi
     else
-        echo -e "$Y$package is already installated.. nothing to do $N"
+        echo -e "$G$package is already installated..$N $Y nothing to do $N"
     fi
 done
 
