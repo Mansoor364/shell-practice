@@ -24,22 +24,22 @@ VALIDATE(){
     fi
 }
 
-dnf list installed git 
-if [ $? -ne 0 ]
-then
-    echo -e "$Y git is not installed, installing $N"
-    dnf install git -y 
-    VALIDATE $? "git installation"
-else
-    echo -e "$Y git is already installed nothing to do $N"
-fi
+for package in $@
+do
+    dnf list installed $package
+    if [ $? -ne 0 ]
+    then
+        echo -e "$Y $package is installing.... $N"
+        dnf install $package -y
+        if [ $? -ne 0 ]
+        then
+            echo -e "$R $package installation is failed $N"
+            exit 1
+        else
+            echo -e "$G $package installation is success $N"
+        fi
+    else
+        echo -e "$Y $package is already installated.. nothing to do $N"
+    fi
+done
 
-dnf list installed mysql
-if [ $? -ne 0 ]
-then
-    echo -e "$Y mysql is not installed..$N $G installing it $N"
-    dnf install mysql -y
-    VALIDATE $? "mysql installation"
-else
-    echo -e "$Y mysql is already installed $N $G nothing to do..$N"
-fi
