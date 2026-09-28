@@ -29,17 +29,17 @@ do
     dnf list installed $package
     if [ $? -ne 0 ]
     then
-        echo -e "$Y $package is installing.... $N"
+        echo -e "$Y$package is installing.... $N"
         dnf install $package -y
         if [ $? -ne 0 ]
         then
-            echo -e "$R $package installation is failed $N"
+            echo -e "$R$package installation is failed $N"
             exit 1
         else
-            echo -e "$G $package installation is success $N"
+            echo -e "$G$package installation is success $N"
         fi
     else
-        echo -e "$Y $package is already installated.. nothing to do $N"
+        echo -e "$Y$package is already installated.. nothing to do $N"
     fi
 done
 
