@@ -7,7 +7,7 @@ N="\e[0m"
 
 USERID=$(id -u)   #id -u will give userid
 ROOT_USER (){
-    if [ $? -ne 0 ]
+    if [ $USERID -ne 0 ]
     then
         echo -e "$Yplease run script with$N $Rroot user privileges..$N"
         exit 1
