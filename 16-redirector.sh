@@ -34,7 +34,7 @@ do
         dnf install $package -y
         VALIDATE $? "$package installation"
     else
-        echo -e "$G$package$N is $Yalready installted, nothing to do$N"
+        echo -e "$G$package $N is $Y already installted, nothing to do$N"
     fi
 done
 
