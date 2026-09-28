@@ -6,7 +6,7 @@ Y="\e[33m"
 N="\e[0m"
 
 USERID=$(id -u)   #id -u will give userid
-ROOT_USER (){
+ROOT_USER(){
     if [ $USERID -ne 0 ]
     then
         echo -e "$Yplease run script with$N $Rroot user privileges..$N"
@@ -15,7 +15,7 @@ ROOT_USER (){
 }
 ROOT_USER()
 
-VALIDATE (){
+VALIDATE(){
     if [ $1 -ne 0 ]
     then
         echo -e "$2 is $R Failed$N"
@@ -32,7 +32,7 @@ do
     then
         echo -e "$R$package$N is $Ynot installed, installing it..$N"
         dnf install $package -y
-        VALIDATE () $? "$package installation"
+        VALIDATE() $? "$package installation"
     else
         echo -e "$G$package$N is $Yalready installted, nothing to do$N"
     fi
