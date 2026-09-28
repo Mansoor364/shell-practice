@@ -32,7 +32,7 @@ do
     then
         echo -e "$R$package$N is $Ynot installed, installing it..$N"
         dnf install $package -y
-        VALIDATE ()
+        VALIDATE () $? "$package installation"
     else
         echo -e "$G$package$N is $Yalready installted, nothing to do$N"
     fi
