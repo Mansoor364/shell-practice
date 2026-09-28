@@ -14,18 +14,18 @@ USERID=$(id -u)   #id -u will give userid
 ROOT_USER(){
     if [ $USERID -ne 0 ]
     then
-        echo -e "$R please run script with root user privileges..$N" &>>$LOG_FILE
+        echo -e "$R please run script with root user privileges..$N" | tee -a $LOG_FILE
         exit 1
     fi
 }
 
 ROOT_USER
 USAGE(){
-    echo -e "$R USAGE:: sudo sh 16-redirector.sh package1 package2 $N"  &>>$LOG_FILE
+    echo -e "$R USAGE:: sudo sh 16-redirector.sh package1 package2 $N" | tee -a $LOG_FILE
     exit 1
 }
 
-echo "script started executing at .. $(date)"  &>>$LOG_FILE
+echo "script started executing at .. $(date)" | tee -a $LOG_FILE
 
 if [ $# -eq 0 ]
 then
@@ -35,10 +35,10 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 is $R Failed$N"   &>>$LOG_FILE
+        echo -e "$2 is $R Failed$N"  | tee -a  $LOG_FILE
         exit 1
     else
-        echo -e "$2 is $G SUCCESS$N"  &>>$LOG_FILE
+        echo -e "$2 is $G SUCCESS$N" | tee -a $LOG_FILE
     fi
 }
 
@@ -48,11 +48,11 @@ do
     dnf list installed $package &>>$LOG_FILE
     if [ $? -ne 0 ]
     then
-        echo -e "$R$package $N is $Y not installed, installing it..$N"  &>>$LOG_FILE
+        echo -e "$R$package $N is $Y not installed, installing it..$N"  | tee -a $LOG_FILE
         dnf install $package -y   &>>$LOG_FILE
         VALIDATE $? "$package installation"
     else
-        echo -e "$G$package $N is $Y already installted, nothing to do$N"  &>>$LOG_FILE
+        echo -e "$G$package $N is $Y already installted, nothing to do$N" | tee -a $LOG_FILE    
     fi
 done
 
