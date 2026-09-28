@@ -21,7 +21,7 @@ ROOT_USER(){
 
 ROOT_USER
 USAGE(){
-    echo -e "$R USAGE:: sudo sh 16-redirector.sh package1 package2 $N"  
+    echo -e "$R USAGE:: sudo sh 16-redirector.sh package1 package2 $N"  &>>$LOG_FILE
     exit 1
 }
 
