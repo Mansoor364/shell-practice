@@ -43,5 +43,5 @@ then
     dnf install mysql -y
     VALIDATE $? "Mysql Installation"
 else
-    echo -e "$Y mysql is already installed, nothing to do.. $N"
+    echo -e "$Y mysql  is already installed, nothing to do.. $N"
 fi
