@@ -21,16 +21,16 @@ ROOT_USER(){
     fi
 }
 ROOT_USER
-
-USAGE(){
-    echo -e "$R USAGE:: sudo sh 16-redirector.sh package1 package2 $N "  &>>$LOG_FILE
-    exit 1
-}
-
 if [ $# -eq 0 ]
 then
     USAGE
 fi
+
+USAGE(){
+    echo -e "$R USAGE:: sudo sh 16-redirector.sh package1 package2 $N "  
+    exit 1
+}
+
 
 VALIDATE(){
     if [ $1 -ne 0 ]
