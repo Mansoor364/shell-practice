@@ -27,7 +27,7 @@ USAGE(){
     exit 1
 }
 
-if [ $# eq 0 ]
+if [ $# -eq 0 ]
 then
     USAGE
 fi
