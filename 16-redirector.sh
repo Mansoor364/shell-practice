@@ -15,7 +15,7 @@ ROOT_USER (){
 }
 ROOT_USER()
 
-VALIDATE(){
+VALIDATE (){
     if [ $1 -ne 0 ]
     then
         echo -e "$2 is $R Failed$N"
@@ -32,7 +32,7 @@ do
     then
         echo -e "$R$package$N is $Ynot installed, installing it..$N"
         dnf install $package -y
-        VALIDATE()
+        VALIDATE ()
     else
         echo -e "$G$package$N is $Yalready installted, nothing to do$N"
     fi
