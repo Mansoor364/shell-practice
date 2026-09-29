@@ -30,6 +30,8 @@ then
     USAGE
 fi
 
+echo -e "Script started executing at : $(date)" | tee -a $LOG_FILE 
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
