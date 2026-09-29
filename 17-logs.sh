@@ -15,16 +15,24 @@ fi
 }
 CHECK_ROOT
 
+USAGE(){
+    echo -e "$RUSAGE:: sudo sh logs.sh package1 package2.....$N"
+    exit 1
+}
+if [ $# -eq 0 ]
+then
+    USAGE
+fi
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$Y $2 $N $R is FAILED$N"
+        echo -e "$Y $2$N $Ris FAILED$N"
         exit 1
     else
-        echo -e "$Y $2 $N $G is SUCCESSFULL$N"
+        echo -e "$Y $2$N $Gis SUCCESSFULL$N"
     fi
 }
-
 
 for package in $@
 do
