@@ -16,7 +16,7 @@ fi
 CHECK_ROOT
 
 USAGE(){
-    echo -e "$RUSAGE:: sudo sh logs.sh package1 package2.....$N"
+    echo -e "$R USAGE:: sudo sh logs.sh package1 package2.....$N"
     exit 1
 }
 if [ $# -eq 0 ]
