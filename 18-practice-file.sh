@@ -43,7 +43,7 @@ VALIDATE $? "Enabling mysql-server"
 systemctl start mysqld                     &>>$LOG_FILE
 VALIDATE $? "Starting mysql-server"
 
-mysql -h 172.31.23.151 -u root -pExpenseApp@1 -e 'show databases;'         &>>$LOG_FILE
+mysql -h 172.31.23.151 -u root -pExpenseApp@1 -e 'show databases;'       
 if [ $? -ne 0 ]
 then
     echo -e "mysql $R root password is not setted.. $N set it"           | tee -a $LOG_FILE 
