@@ -11,7 +11,7 @@ DAYS=${3:-14}                     #Days is optional -if user doesnt provide 14 w
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
 USAGE(){
-    echo -e "$R USAGE:: sh 21-zip-move.sh source-dir destina-dir days $N"
+    echo -e "$R USAGE:: $N sh 21-zip-move.sh source-dir destina-dir days"
     exit 1
 }
 if [ $# -lt 2 ]
