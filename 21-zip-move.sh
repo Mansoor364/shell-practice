@@ -34,9 +34,9 @@ fi
 FILES=$(find $SOUR_DIR -name "*.log" -mtime +$DAYS)
 echo -e "$Y log files older than $DAYS are $N : $FILES"
 
-if [ ! -Z $FILES ]
+if [ ! -z $FILES ]
 then
-    echo -e "$G source files exist$N"
+    echo -e "$G source files exist $N"
     ZIP_FILE="$DEST_DIR/app-log-$TIME_STAMP.zip"
     find $SOUR_DIR -name "*.log" -mtime +$DAYS | zip $ZIP_FILE -@
     if [ -f $ZIP_FILE ]
@@ -51,5 +51,5 @@ then
         echo -e "Zipping log files older than $DAYS is $R failed $N"
     fi          
 else
-    echo -e "$R log files older than $DAYS not exist $N"
+    echo -e "log files $R older than $DAYS not exist $N"
 fi
