@@ -18,6 +18,6 @@ echo -e "LOG FILES are :$Y $FILES $N"
 
 while IFS= read -r file
 do
-    echo "deleting file : $file"
+    echo -e "$R deleting file :$N  $file"
     rm -rf $file
 done<<<$FILES
