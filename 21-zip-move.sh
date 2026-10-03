@@ -51,5 +51,5 @@ then
         echo -e "Zipping log files older than $DAYS is $R failed $N"
     fi          
 else
-    echo -e "log files $R older than $DAYS not exist $N"
+    echo -e "log files older than $R  not exist $N"
 fi
