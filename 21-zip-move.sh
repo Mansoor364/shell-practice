@@ -14,6 +14,7 @@ USAGE(){
     echo -e "$R USAGE:: $N sh 21-zip-move.sh source-dir destina-dir days"
     exit 1
 }
+
 if [ $# -lt 2 ]
 then
     USAGE 
@@ -44,9 +45,9 @@ then
         echo -e "log files older than $DAYS are $G Zipped sucessfuly $N"
         while IFS= read -r file
         do
-            echo -e "$R deleting files :$N $file
+            echo -e "$R deleting files :$N $file "
             rm -rf $file
-        done<<<$FILES
+        done <<<$FILES
     else
         echo -e "Zipping log files older than $DAYS is $R failed $N"
     fi          
