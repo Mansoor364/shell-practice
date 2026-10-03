@@ -48,8 +48,8 @@ then
             rm -rf $file
         done<<<$FILES
     else
-        echo-e "Zipping log files older than $DAYS is $R failed $N"
+        echo -e "Zipping log files older than $DAYS is $R failed $N"
     fi          
 else
-    echo "$R log files older than $DAYS not exist $N"
+    echo -e "$R log files older than $DAYS not exist $N"
 fi
